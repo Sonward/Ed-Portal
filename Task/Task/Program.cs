@@ -41,32 +41,6 @@ internal class Program
             }
         }
     }
-    static void ReadFile(string filePath, List<int> numbers)
-    {
-        try
-        {
-            using (StreamReader sr = new StreamReader(filePath))
-            {
-                string line;
-                while ((line = sr.ReadLine()) != null)
-                {
-                    // Перетворюємо рядок у ціле число і додаємо до списку
-                    if (int.TryParse(line, out int number))
-                    {
-                        numbers.Add(number);
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Неможливо перетворити рядок '{line}' у ціле число.");
-                    }
-                }
-            }
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine($"Помилка при читанні файлу: {e.Message}");
-        }
-    }
 
     static bool Comparison(int a, int b, bool upper = true)
     {
@@ -139,24 +113,6 @@ internal class Program
 
         return totalLongest.Item2 < mergedLongest.Item2? mergedLongest : totalLongest;
     }
-    static int FindMaxAsync(List<int> numbers)
-    {
-        int max = numbers[0];
-        Parallel.ForEach(numbers, number =>
-        {
-            if (number > max) { max = number; }
-        });
-        return max;
-    }
-    static int FindMinAsync(List<int> numbers)
-    {
-        int min = numbers[0];
-        Parallel.ForEach(numbers, number =>
-        {
-            if (number < min) { min = number;}
-        });
-        return min;
-    }
     static int AwarageAsync(List<int> numbers)
     {
         int totalSum = 0;
@@ -188,94 +144,5 @@ internal class Program
     {
         return numbers.Count % 2 == 1 ? numbers[numbers.Count / 2] :
             (numbers[numbers.Count / 2] + numbers[numbers.Count / 2 - 1]) / 2;
-    }
-
-    static int FindMax(List<int> numbers)
-    {
-        int max = numbers[0];
-        foreach (int number in numbers)
-        {
-            if (number > max) { max = number; }
-        }
-        return max;
-    }
-    static int FindMin(List<int> numbers)
-    {
-        int min = numbers[0];
-        foreach (int number in numbers)
-        {
-            if (number < min) { min = number; }
-        }
-        return min;
-    }
-    static int Awarage(List<int> numbers)
-    {
-        int sum = 0;
-        foreach (int number in numbers)
-        {
-            sum+= number;
-        }
-        return sum/numbers.Count;
-    }
-    static (int, int) LongestIncreaseSequence(List<int> numbers)
-    {
-        int maxLength = 0;
-        int maxPosition = 0;
-        int currentLength = 1;
-        int currentPosition = 0;
-
-        for (int i = 0; i < numbers.Count - 1; i++)
-        {
-            if (numbers[i] < numbers[i + 1]) 
-            { 
-                currentLength++;
-            }
-            else 
-            { 
-                if (currentLength > maxLength) 
-                { 
-                    maxLength = currentLength; 
-                    maxPosition = currentPosition; 
-                }
-                currentLength=1; currentPosition = i + 1; 
-            }
-        }
-
-        if (currentLength > maxLength)
-        {
-            maxLength = currentLength;
-            maxPosition = currentPosition;
-        }
-
-        return new(maxPosition, maxLength);
-    }
-    static (int, int) LongestDecreaseSequence(List<int> numbers)
-    {
-        int maxLength = 0;
-        int maxPosition = 0;
-        int currentLength = 1;
-        int currentPosition = 0;
-
-        for (int i = 0; i < numbers.Count - 1; i++)
-        {
-            if (numbers[i] > numbers[i + 1]) { currentLength++; }
-            else
-            {
-                if (currentLength > maxLength) 
-                { 
-                    maxLength = currentLength;
-                    maxPosition = currentPosition;
-                }
-                currentLength = 1; currentPosition = i + 1; 
-            }
-        }
-
-        if (currentLength > maxLength)
-        {
-            maxLength = currentLength;
-            maxPosition = currentPosition;
-        }
-
-        return new(maxPosition, maxLength);
     }
 }
