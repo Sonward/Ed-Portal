@@ -1,0 +1,14 @@
+E:\My Files\C# studing\Task\Task\bin\Debug\net8.0\Task.exe
+E:\My Files\C# studing\Task\Task\bin\Debug\net8.0\Task.deps.json
+E:\My Files\C# studing\Task\Task\bin\Debug\net8.0\Task.runtimeconfig.json
+E:\My Files\C# studing\Task\Task\bin\Debug\net8.0\Task.dll
+E:\My Files\C# studing\Task\Task\bin\Debug\net8.0\Task.pdb
+E:\My Files\C# studing\Task\Task\obj\Debug\net8.0\Task.GeneratedMSBuildEditorConfig.editorconfig
+E:\My Files\C# studing\Task\Task\obj\Debug\net8.0\Task.AssemblyInfoInputs.cache
+E:\My Files\C# studing\Task\Task\obj\Debug\net8.0\Task.AssemblyInfo.cs
+E:\My Files\C# studing\Task\Task\obj\Debug\net8.0\Task.csproj.CoreCompileInputs.cache
+E:\My Files\C# studing\Task\Task\obj\Debug\net8.0\Task.dll
+E:\My Files\C# studing\Task\Task\obj\Debug\net8.0\refint\Task.dll
+E:\My Files\C# studing\Task\Task\obj\Debug\net8.0\Task.pdb
+E:\My Files\C# studing\Task\Task\obj\Debug\net8.0\Task.genruntimeconfig.cache
+E:\My Files\C# studing\Task\Task\obj\Debug\net8.0\ref\Task.dll
